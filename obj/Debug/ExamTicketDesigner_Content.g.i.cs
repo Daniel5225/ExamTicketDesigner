@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("news.exe")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("help/news.exe")]
 
 

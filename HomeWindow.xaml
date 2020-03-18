@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ExamTicketDesigner"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="HomeWindow" Height="250" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+        Title="HomeWindow" Height="250" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Initialized="Window_Initialized">
     <Grid Background="#FFFFFF">
         <StackPanel VerticalAlignment="Top">
             <Grid Background="#455A64" Height="10"/>

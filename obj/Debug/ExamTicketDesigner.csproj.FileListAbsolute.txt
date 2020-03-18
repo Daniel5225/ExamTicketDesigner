@@ -44,3 +44,5 @@ C:\Users\Daniel\Documents\GitHub\ExamTicketDesigner\obj\Debug\ExamTicketDesigner
 C:\Users\Daniel\Documents\GitHub\ExamTicketDesigner\obj\Debug\ExamTicketDesigner.Properties.Resources.resources
 C:\Users\Daniel\Documents\GitHub\ExamTicketDesigner\obj\Debug\ExamTicketDesigner.csproj.GenerateResource.cache
 C:\Users\Daniel\Documents\GitHub\ExamTicketDesigner\obj\Debug\ExamTicketDesigner.csproj.CopyComplete
+C:\Users\Daniel\Documents\GitHub\ExamTicketDesigner\obj\Debug\ExamTicketDesigner_Content.g.cs
+C:\Users\Daniel\Documents\GitHub\ExamTicketDesigner\bin\Debug\Help\news.exe

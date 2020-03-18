@@ -17,5 +17,11 @@ namespace ExamTicketDesigner
         {
             Application.Current.Shutdown();
         }
+
+        private void Window_Initialized(object sender, System.EventArgs e)
+        {
+            System.Diagnostics.Process proc = System.Diagnostics.Process.Start("Help\\news.exe"); //Запускаем скрипт парсинга новостей
+            proc.WaitForExit();//и ждем, когда он завершит свою работу 
+        }
     }
 }
