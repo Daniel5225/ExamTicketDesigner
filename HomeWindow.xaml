@@ -6,44 +6,59 @@
         xmlns:local="clr-namespace:ExamTicketDesigner"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="HomeWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+        Title="HomeWindow" Height="250" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid Background="#FFFFFF">
         <StackPanel VerticalAlignment="Top">
             <Grid Background="#455A64" Height="10"/>
             <Grid Background="#607D8B">
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <TextBlock Text="Конструктор экзаменационных билетов" VerticalAlignment="Center" FontSize="20" FontFamily="Champagne &amp; Limousines" Margin="10 0" Foreground="#FFFFFF"/>
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#CFD8DC">
-                        <materialDesign:PackIcon Kind="InternetExplorer"/>
-                    </Button>
+
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#CFD8DC">
-                        <materialDesign:PackIcon Kind="Settings"/>
+                        <materialDesign:PackIcon Kind="SearchWeb"/>
                     </Button>
                     <Button x:Name="ButtonFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#CFD8DC" Click="ButtonFechar_Click">
-                        <materialDesign:PackIcon Kind="Power"/>
+                        <materialDesign:PackIcon Kind="Close"/>
                     </Button>
                 </StackPanel>
             </Grid>
         </StackPanel>
         <Grid Margin="0 40 0 0" >
             <StackPanel HorizontalAlignment="Left" Orientation="Vertical" Margin="10 0">
-                <ComboBox materialDesign:HintAssist.Hint="Выбор факультета" Margin="0 10" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                    <ComboBoxItem IsSelected="True">Физико-математический факультет</ComboBoxItem>
-                    <ComboBoxItem>Биологический факультет</ComboBoxItem>
-                    <ComboBoxItem>Юридический факультет</ComboBoxItem>
-                    <ComboBoxItem>Географический факультет</ComboBoxItem>
-                    <ComboBoxItem>Исторический факультет</ComboBoxItem>
-                    <ComboBoxItem>Социально-педагогический факультет</ComboBoxItem>
-                    <ComboBoxItem>Филологический факультет</ComboBoxItem>
-                    <ComboBoxItem>Факультет физического воспитания</ComboBoxItem>
-                    <ComboBoxItem>Факультет иностранных языков</ComboBoxItem>
-                    <ComboBoxItem>Психолого-педагогический факультет</ComboBoxItem>
+                <TextBlock Text="Количество теоретических вопросов"/>
+                <ComboBox Margin="0 5" HorizontalAlignment="Left" Height="20" Width="30" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                    <ComboBoxItem Content="Нет" IsSelected="True"/>
+                    <ComboBoxItem Content="1"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
                 </ComboBox>
-             </StackPanel>
-            <StackPanel HorizontalAlignment="Right" Orientation="Vertical" Margin="10 0">
-                
+                <TextBlock Text="Количество практических вопросов"/>
+                <ComboBox Margin="0 5" HorizontalAlignment="Left" Height="20" Width="30" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                    <ComboBoxItem Content="Нет" IsSelected="True"/>
+                    <ComboBoxItem Content="1"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                </ComboBox>
+                <CheckBox Margin="0 5" Content="Использовать количество баллов по умолчанию" FontFamily="TimesNewRoman" FontSize="10"/>
+                <Button Margin="0 2.5" Content="Сгенерировать билет" Background="#607D8B" BorderBrush="#607D8B"/>
+                <Button Margin="0 2.5" Content="Указать путь к файлу" Background="#607D8B" BorderBrush="#607D8B"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Width="320" Orientation="Vertical" Margin="10 5">
+                <TextBlock Text="Новости университета" FontSize="14" FontWeight="DemiBold"/>
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="2">
+                    <TextBlock TextWrapping="Wrap" x:Name="News1"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="2">
+                    <TextBlock TextWrapping="Wrap" x:Name="News2"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="2">
+                    <TextBlock TextWrapping="Wrap" x:Name="News3"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="2">
+                    <TextBlock TextWrapping="Wrap" x:Name="News4"/>
+                </Border>
             </StackPanel>
         </Grid>
     </Grid>
