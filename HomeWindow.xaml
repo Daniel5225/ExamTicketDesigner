@@ -19,7 +19,7 @@
                     <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#CFD8DC">
                         <materialDesign:PackIcon Kind="SearchWeb"/>
                     </Button>
-                    <Button x:Name="ButtonFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#CFD8DC" Click="ButtonFechar_Click">
+                    <Button x:Name="ButtonClose" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#CFD8DC" Click="ButtonClose_Click">
                         <materialDesign:PackIcon Kind="Close"/>
                     </Button>
                 </StackPanel>
@@ -28,15 +28,15 @@
         <Grid Margin="0 40 0 0" >
             <StackPanel HorizontalAlignment="Left" Orientation="Vertical" Margin="10 0">
                 <TextBlock Text="Количество теоретических вопросов"/>
-                <ComboBox Margin="0 5" HorizontalAlignment="Left" Height="20" Width="30" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <ComboBox Margin="0 5" HorizontalAlignment="Left" Height="25" Width="40">
                     <ComboBoxItem Content="Нет" IsSelected="True"/>
                     <ComboBoxItem Content="1"/>
                     <ComboBoxItem Content="2"/>
                     <ComboBoxItem Content="3"/>
                 </ComboBox>
                 <TextBlock Text="Количество практических вопросов"/>
-                <ComboBox Margin="0 5" HorizontalAlignment="Left" Height="20" Width="30" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                    <ComboBoxItem Content="Нет" IsSelected="True"/>
+                <ComboBox Margin="0 5" HorizontalAlignment="Left" Height="25" Width="40" >
+                    <ComboBoxItem IsSelected="True" Content="Нет"/>
                     <ComboBoxItem Content="1"/>
                     <ComboBoxItem Content="2"/>
                     <ComboBoxItem Content="3"/>

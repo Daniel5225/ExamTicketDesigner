@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("brsulogo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("news.exe")]
 
 
