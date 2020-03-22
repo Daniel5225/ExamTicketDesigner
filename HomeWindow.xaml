@@ -28,22 +28,22 @@
         <Grid Margin="0 40 0 0" >
             <StackPanel HorizontalAlignment="Left" Orientation="Vertical" Margin="10 0">
                 <TextBlock Text="Количество теоретических вопросов"/>
-                <ComboBox Margin="0 5" HorizontalAlignment="Left" Height="25" Width="40">
-                    <ComboBoxItem Content="Нет" IsSelected="True"/>
+                <ComboBox x:Name="Qnumber1" Margin="0 5" HorizontalAlignment="Left" Height="25" Width="40">
+                    <ComboBoxItem Content="0" IsSelected="True"/>
                     <ComboBoxItem Content="1"/>
                     <ComboBoxItem Content="2"/>
                     <ComboBoxItem Content="3"/>
                 </ComboBox>
                 <TextBlock Text="Количество практических вопросов"/>
-                <ComboBox Margin="0 5" HorizontalAlignment="Left" Height="25" Width="40" >
-                    <ComboBoxItem IsSelected="True" Content="Нет"/>
+                <ComboBox x:Name="QNumber2" Margin="0 5" HorizontalAlignment="Left" Height="25" Width="40" >
+                    <ComboBoxItem IsSelected="True" Content="0"/>
                     <ComboBoxItem Content="1"/>
                     <ComboBoxItem Content="2"/>
                     <ComboBoxItem Content="3"/>
                 </ComboBox>
-                <CheckBox Margin="0 5" Content="Использовать количество баллов по умолчанию" FontFamily="TimesNewRoman" FontSize="10"/>
-                <Button Margin="0 2.5" Content="Сгенерировать билет" Background="#607D8B" BorderBrush="#607D8B"/>
-                <Button Margin="0 2.5" Content="Указать путь к файлу" Background="#607D8B" BorderBrush="#607D8B"/>
+                <CheckBox x:Name="ScoreDefaultCB" Margin="0 5" Content="Использовать количество баллов по умолчанию" FontFamily="TimesNewRoman" FontSize="10" Checked="ScoreDefaultCB_Checked"/>
+                <Button x:Name="StartButton" Margin="0 2.5" Content="Сгенерировать билет" Background="#607D8B" BorderBrush="#607D8B" Click="StartButton_Click"/>
+                <Button x:Name="PathButton" Margin="0 2.5" Content="Указать путь к файлу" Background="#607D8B" BorderBrush="#607D8B" Click="PathButton_Click"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Width="320" Orientation="Vertical" Margin="10 5">
                 <TextBlock Text="Новости университета" FontSize="14" FontWeight="DemiBold"/>
