@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ExamTicketDesigner"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="HomeWindow" Height="250" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Initialized="Window_Initialized">
+        Title="HomeWindow" Height="260" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Initialized="Window_Initialized">
     <Grid Background="#FFFFFF">
         <StackPanel VerticalAlignment="Top">
             <Grid Background="#455A64" Height="10"/>
@@ -16,7 +16,7 @@
 
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#CFD8DC">
+                    <Button x:Name="WebSite" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#CFD8DC" Click="WebSite_Click">
                         <materialDesign:PackIcon Kind="SearchWeb"/>
                     </Button>
                     <Button x:Name="ButtonClose" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#CFD8DC" Click="ButtonClose_Click">
@@ -27,23 +27,17 @@
         </StackPanel>
         <Grid Margin="0 40 0 0" >
             <StackPanel HorizontalAlignment="Left" Orientation="Vertical" Margin="10 0">
-                <TextBlock Text="Количество теоретических вопросов"/>
-                <ComboBox x:Name="Qnumber1" Margin="0 5" HorizontalAlignment="Left" Height="25" Width="40">
-                    <ComboBoxItem Content="0" IsSelected="True"/>
-                    <ComboBoxItem Content="1"/>
-                    <ComboBoxItem Content="2"/>
-                    <ComboBoxItem Content="3"/>
+                <TextBlock Margin="0 5 0 2.5" Text="Выберите сценарий генерации билетов"/>
+                <ComboBox x:Name="Qnumber" Margin="0 5" HorizontalAlignment="Left" Height="25" Width="250">
+                    <ComboBoxItem Content="2 теоретических вопроса и 1 практический" IsSelected="True"/>
+                    <ComboBoxItem Content="3 теоретических вопроса"/>
+                    <ComboBoxItem Content="3 практических вопроса"/>
                 </ComboBox>
-                <TextBlock Text="Количество практических вопросов"/>
-                <ComboBox x:Name="QNumber2" Margin="0 5" HorizontalAlignment="Left" Height="25" Width="40" >
-                    <ComboBoxItem IsSelected="True" Content="0"/>
-                    <ComboBoxItem Content="1"/>
-                    <ComboBoxItem Content="2"/>
-                    <ComboBoxItem Content="3"/>
-                </ComboBox>
-                <CheckBox x:Name="ScoreDefaultCB" Margin="0 5" Content="Использовать количество баллов по умолчанию" FontFamily="TimesNewRoman" FontSize="10" Checked="ScoreDefaultCB_Checked"/>
+                <TextBlock Text="Введите номер группы" Margin="0 2.5"/>
+                <TextBox x:Name="groupbox" Margin="0 0 0 2.5" Width="50" HorizontalAlignment="Left"/>
                 <Button x:Name="StartButton" Margin="0 2.5" Content="Сгенерировать билет" Background="#607D8B" BorderBrush="#607D8B" Click="StartButton_Click"/>
-                <Button x:Name="PathButton" Margin="0 2.5" Content="Указать путь к файлу" Background="#607D8B" BorderBrush="#607D8B" Click="PathButton_Click"/>
+                <Button x:Name="PathTButton" Margin="0 2.5" Content="Путь к файлу с Т. вопросами" Background="#607D8B" BorderBrush="#607D8B" Click="PathTButton_Click"/>
+                <Button x:Name="PathPButton" Margin="0 2.5" Content="Путь к файлу с П. вопросами" Background="#607D8B" BorderBrush="#607D8B" Click="PathPButton_Click"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Width="320" Orientation="Vertical" Margin="10 5">
                 <TextBlock Text="Новости университета" FontSize="14" FontWeight="DemiBold"/>
@@ -55,9 +49,6 @@
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="2">
                     <TextBlock TextWrapping="Wrap" x:Name="News3"/>
-                </Border>
-                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="2">
-                    <TextBlock TextWrapping="Wrap" x:Name="News4"/>
                 </Border>
             </StackPanel>
         </Grid>

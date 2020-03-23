@@ -41,5 +41,13 @@ namespace ExamTicketDesigner
                 this.IsEnabled = true;
             }
         }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            Group.Text = HomeWindow.groupn;
+            FirstQuestion.Text = HomeWindow.firstq;
+            SecondQuestion.Text = HomeWindow.secondq;
+            ThirdQuestion.Text = HomeWindow.thirdq;
+        }
     }
 }

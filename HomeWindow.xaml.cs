@@ -12,8 +12,12 @@ namespace ExamTicketDesigner
     /// </summary>
     public partial class HomeWindow : Window
     {
-        string pathtofile = "";
-        string[] questions;
+        string pathtotfile = null;
+        string pathtopfile = null;
+        string[] news;
+        string[] questionst;
+        string[] questionsp;
+        public static string groupn, firstq, secondq, thirdq;
         public HomeWindow()
         {
             InitializeComponent();
@@ -27,10 +31,19 @@ namespace ExamTicketDesigner
         private void Window_Initialized(object sender, System.EventArgs e)
         {
             System.Diagnostics.Process proc = System.Diagnostics.Process.Start("Help\\news.exe"); //Запускаем скрипт парсинга новостей
-            proc.WaitForExit();//и ждем, когда он завершит свою работу 
+            proc.WaitForExit();//и ждем, когда он завершит свою работу
+            news = File.ReadAllLines("news.txt", System.Text.Encoding.Default);
+            News1.Text = news[1];
+            News2.Text = news[2];
+            News3.Text = news[3];
         }
 
-        private void PathButton_Click(object sender, RoutedEventArgs e)
+        private void WebSite_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://brsu.by");
+        }
+
+        private void PathTButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Multiselect = false;
@@ -40,26 +53,103 @@ namespace ExamTicketDesigner
 
             if (dialogOK == true)
             {
-                pathtofile = fileDialog.FileName.Trim();
+                pathtotfile = fileDialog.FileName.Trim();
+            }
+        }
+        private void PathPButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Multiselect = false;
+            fileDialog.Filter = "Текстовые файлы|*.txt";
+            fileDialog.DefaultExt = ".txt";
+            Nullable<bool> dialogOK = fileDialog.ShowDialog();
+
+            if (dialogOK == true)
+            {
+                pathtopfile = fileDialog.FileName.Trim();
             }
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            int qnumber = Convert.ToInt16(Qnumber1.Text) + Convert.ToInt16(QNumber2.Text);
-            if (qnumber >= 4 || qnumber <=0)
-            {
-                MessageBox.Show("Максимальное количество вопросов - 3");
-            }
+            if (pathtopfile == null)
+                MessageBox.Show("Укажите путь к файлу с практическими вопросами перед генерацией билета!");
+            else if (pathtotfile == null)
+                MessageBox.Show("Укажите путь к файлу с теоретическими вопросами перед генерацией билета!");
             else
-            {                
-                questions = File.ReadAllLines(@"" + pathtofile + "", System.Text.Encoding.Default);
+            {
+                Random rand = new Random();
+                int temp;
+                questionst = File.ReadAllLines(@"" + pathtotfile + "", System.Text.Encoding.Default);
+                questionsp = File.ReadAllLines(@"" + pathtopfile + "", System.Text.Encoding.Default);
+                if (Qnumber.SelectedIndex == 0)
+                {
+                    temp = rand.Next(questionst.Length);
+                    firstq = (questionst[temp]);
+                second:
+                    temp = rand.Next(questionst.Length);
+                    secondq = (questionst[temp]);
+                    if (firstq == secondq)
+                    {
+                        goto second;
+                    }
+                    else
+                    {
+                        temp = rand.Next(questionsp.Length);
+                        thirdq = (questionsp[temp]);
+                    }
+                }
+                else if (Qnumber.SelectedIndex == 1)
+                {
+                    temp = rand.Next(questionst.Length);
+                    firstq = (questionst[temp]);
+                second:
+                    temp = rand.Next(questionst.Length);
+                    secondq = (questionst[temp]);
+                    if (firstq == secondq)
+                    {
+                        goto second;
+                    }
+                    else
+                    {
+                    third:
+                        temp = rand.Next(questionst.Length);
+                        thirdq = (questionst[temp]);
+                        if (thirdq == secondq || thirdq == firstq)
+                            goto third;
+                    }
+
+                }
+                else if (Qnumber.SelectedIndex == 2)
+                {
+                    temp = rand.Next(questionsp.Length);
+                    firstq = (questionsp[temp]);
+                second:
+                    temp = rand.Next(questionsp.Length);
+                    secondq = (questionsp[temp]);
+                    if (firstq == secondq)
+                    {
+                        goto second;
+                    }
+                    else
+                    {
+                    third:
+                        temp = rand.Next(questionst.Length);
+                        thirdq = (questionsp[temp]);
+                        if (thirdq == secondq || thirdq == firstq)
+                            goto third;
+                    }
+                }
+                groupn = Convert.ToString(groupbox.Text);
+                if (groupn == null || groupn.Length >= 6 || groupn.Length <= 4)
+                    MessageBox.Show("Укажите корректный номер группы");
+                else
+                {
+                    MainWindow mw = new MainWindow();
+                    mw.Owner = this;
+                    mw.Show();
+                }
             }
-        }
-
-        private void ScoreDefaultCB_Checked(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

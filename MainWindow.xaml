@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ExamTicketDesigner"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Билет" Height="600" Width="535.5" ResizeMode="NoResize" WindowStyle="None" FontFamily="Roboto" WindowStartupLocation="CenterScreen">
+        Title="Билет" Height="600" Width="535.5" ResizeMode="NoResize" WindowStyle="None" FontFamily="Roboto" WindowStartupLocation="CenterScreen" Activated="Window_Activated">
     <Grid>
         <Button HorizontalAlignment="Right" Margin="10" Click="Button_Click" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="Printer"/>
@@ -19,8 +19,7 @@
             </Grid.RowDefinitions>
 
             <StackPanel Orientation="Horizontal" Margin="30" Grid.Row="0">
-                <TextBlock Text="Билет №" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="Black"/>
-                <TextBlock Name="TicketNumber" Text="#" FontSize="35" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black"/>
+                <TextBlock Text="Экзаменационный билет" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="Black"/>
             </StackPanel>
             <StackPanel Grid.Row="1" HorizontalAlignment="Stretch" Margin="20">
                 <Grid HorizontalAlignment="Stretch">
@@ -29,15 +28,10 @@
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" Margin="10">
-                        <TextBlock FontWeight="Bold" Text="Учащийся:"  FontSize="18" Margin="5 5 5 0"/>
-                        <TextBlock x:Name="NameTxT" Text="################" FontSize="16" Margin="5 0 0 0"/>
+
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Курс:" FontWeight="Bold" FontSize="12" Margin="5"/>
-                            <TextBlock Name="lvl" Text="#" FontSize="12" Margin="5" FontWeight="DemiBold"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Группа:" FontWeight="Bold" FontSize="12" Margin="5"/>
-                            <TextBlock Name="Group" Text="#-###" FontSize="12" Margin="5" FontWeight="DemiBold"/>
+                            <TextBlock Text="Группа:" FontWeight="Bold" FontSize="18" Margin="5"/>
+                            <TextBlock x:Name="Group" Text="#-###" FontSize="18" Margin="5" FontWeight="DemiBold"/>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
@@ -96,12 +90,10 @@
 
         </Grid>
         <StackPanel Margin="0 0 0 10" VerticalAlignment="Bottom" Orientation="Horizontal">
-            <TextBlock FontSize="10" Text="Конструктор экзаменационных билетов, версия "/>
-            <TextBlock x:Name="Versionlabel" FontSize="10" Text="#" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock FontSize="10" Text="Конструктор экзаменационных билетов"/>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal">
-            <TextBlock FontSize="10" Text="Учреждение образования ''Брестский государственный университет имени А.С. Пушкина'', " />
-            <TextBlock FontSize="10" Text="#"/>
+            <TextBlock FontSize="10" Text="Учреждение образования ''Брестский государственный университет имени А.С. Пушкина''"/>
         </StackPanel>
     </Grid>
 </Window>
