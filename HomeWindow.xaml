@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ExamTicketDesigner"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="HomeWindow" Height="260" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Initialized="Window_Initialized">
+        Title="HomeWindow" Height="270" Width="610" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Initialized="Window_Initialized">
     <Grid Background="#FFFFFF">
         <StackPanel VerticalAlignment="Top">
             <Grid Background="#455A64" Height="10"/>
@@ -28,7 +28,7 @@
         <Grid Margin="0 40 0 0" >
             <StackPanel HorizontalAlignment="Left" Orientation="Vertical" Margin="10 0">
                 <TextBlock Margin="0 5 0 2.5" Text="Выберите сценарий генерации билетов"/>
-                <ComboBox x:Name="Qnumber" Margin="0 5" HorizontalAlignment="Left" Height="25" Width="250">
+                <ComboBox x:Name="Qnumber" Margin="0 5" HorizontalAlignment="Left" Height="30" Width="260">
                     <ComboBoxItem Content="2 теоретических вопроса и 1 практический" IsSelected="True"/>
                     <ComboBoxItem Content="3 теоретических вопроса"/>
                     <ComboBoxItem Content="3 практических вопроса"/>
